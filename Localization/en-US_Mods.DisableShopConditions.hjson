@@ -20,6 +20,8 @@ Configs: {
 			BiomeConditions: Biome conditions
 			WorldFlagConditions: World Flag Conditions
 			WorldTypeConditions: World Type Conditions
+			EventConditions: Event Conditions
+			MiscellaneousConditions: Miscellaneous Conditions
 		}
 
 		SpecificBiomeConditions: {
@@ -45,6 +47,13 @@ Configs: {
 
 		SpecificEventConditions: {
 			Label: Specific Event Conditions
+			Tooltip: ""
+		}
+
+		DisableMiscellaneousConditions.Label: Disable Miscellaneous Conditions
+
+		SpecificMiscellaneousConditions: {
+			Label: Specific Miscellaneous Conditions
 			Tooltip: ""
 		}
 	}
@@ -137,5 +146,16 @@ Configs: {
 		BirthdayParty.Label: Birthday Party
 		LanternNight.Label: Lantern Night
 		HappyWindyDay.Label: Happy Windy Day
+	}
+
+	MiscConditions: {
+		Tooltip: ""
+		BloodMoonOrHardmode.Label: Blood Moon Or Hardmode
+		NightOrEclipse.Label: Night Or Eclipse
+		Multiplayer.Label: Multiplayer
+		HappyEnough.Label: Happy Enough
+		HappyEnoughToSellPylons.Label: Happy Enough To Sell Pylons
+		AnotherTownNPCNearby.Label: Another Town N P C Nearby
+		IsNpcShimmered.Label: Is Npc Shimmered
 	}
 }

@@ -59,7 +59,7 @@ public class ShopConfig : ModConfig {
     
     //////////////////////////////////////////////////////////////////////////////
     
-    [Header("WorldTypeConditions")]
+    [Header("EventConditions")]
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.SetAllTooltip")]
     [ReloadRequired]
     [JsonIgnore]
@@ -72,6 +72,22 @@ public class ShopConfig : ModConfig {
     [ReloadRequired]
     [Expand(false)]
     public EventConditions SpecificEventConditions { get; set; } = new();
+    
+    //////////////////////////////////////////////////////////////////////////////
+    
+    [Header("MiscellaneousConditions")]
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.SetAllTooltip")]
+    [ReloadRequired]
+    [JsonIgnore]
+    [ShowDespiteJsonIgnore]
+    public bool DisableMiscellaneousConditions {
+        get => SpecificMiscellaneousConditions?.AllConditionsDisabled() ?? false;
+        set => SpecificMiscellaneousConditions.SetAllConditions(value);
+    }
+
+    [ReloadRequired]
+    [Expand(false)]
+    public MiscConditions SpecificMiscellaneousConditions { get; set; } = new();
 
     public ShopConditions? ShopConditionFromType(Type type) => 
         GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
