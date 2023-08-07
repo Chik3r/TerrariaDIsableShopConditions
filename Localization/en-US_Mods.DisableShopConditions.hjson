@@ -16,11 +16,21 @@ Configs: {
 			Label: Disable biome conditions
 		}
 
-		Headers.BiomeConditions: Biome conditions
+		Headers: {
+			BiomeConditions: Biome conditions
+			WorldFlagConditions: World Flag Conditions Header
+		}
 
 		SpecificBiomeConditions: {
 			Tooltip: ""
 			Label: Specific biome conditions
+		}
+
+		DisableWorldFlagConditions.Label: Disable World Flag Conditions
+
+		SpecificWorldFlagConditions: {
+			Label: Specific World Flag Conditions
+			Tooltip: ""
 		}
 	}
 
@@ -60,5 +70,21 @@ Configs: {
 		InCorrupt.Label: In Corruption
 		InDungeon.Label: In Dungeon
 		Tooltip: ""
+		InShoppingZoneForest.Label: In Shopping Zone Forest
+		InBelowSurface.Label: In Below Surface
+		InEvilBiome.Label: In Evil Biome
+		NotInEvilBiome.Label: Not In Evil Biome
+		NotInHallow.Label: Not In Hallow
+		NotInGraveyard.Label: Not In Graveyard
+		NotInUnderworld.Label: Not In Underworld
+	}
+
+	WorldFlagConditions: {
+		Tooltip: ""
+		Hardmode.Label: Hardmode
+		PreHardmode.Label: Pre Hardmode
+		SmashedShadowOrb.Label: Smashed Shadow Orb
+		CrimsonWorld.Label: Crimson World
+		CorruptWorld.Label: Corrupt World
 	}
 }
