@@ -8,9 +8,19 @@ using Terraria.ModLoader;
 namespace DisableShopConditions; 
 
 public class ShopNPC : GlobalNPC {
+    private static ShopConfig Config => ModContent.GetInstance<ShopConfig>();
+    
     public override void ModifyShop(NPCShop shop) {
-        List<Type> shopConditions = typeof(ShopNPC).Assembly.GetTypes().Where(t => typeof(ShopConditions).IsAssignableFrom(t)).ToList();
-        
+        List<Type> shopConditionsTypes = typeof(ShopNPC).Assembly.GetTypes().Where(t => t != typeof(ShopConditions) && typeof(ShopConditions).IsAssignableFrom(t)).ToList();
+        List<ShopConditions> shopConditions = new(shopConditionsTypes.Count);
+        foreach (Type shopConditionType in shopConditionsTypes) {
+            ShopConditions? shopCondition = Config.ShopConditionFromType(shopConditionType);
+            if (shopCondition is null) {
+                Mod.Logger.Warn($"Shop condition (type: {shopConditionType.FullName}) couldn't be found");
+                continue;
+            }
+            shopConditions.Add(shopCondition);
+        }
         
         IReadOnlyList<NPCShop.Entry> shopEntries = shop.Entries;
         foreach (NPCShop.Entry entry in shopEntries) {
@@ -18,11 +28,25 @@ public class ShopNPC : GlobalNPC {
                 Mod.Logger.Warn("Conditions is not a List<Condition>, please report this to the mod author.");
                 continue;
             }
+            
+            if (conditions.Count == 0) continue;
 
-            List<Condition> clone = new(conditions);
-            foreach (Condition condition in clone) {
-                if (condition == Condition.InGraveyard) {
-                    conditions.Remove(condition);
+            foreach (ShopConditions shopCondition in shopConditions) {
+                Dictionary<string, bool> disabledConditions = shopCondition.GetDisabledConditions();
+                Mod.Logger.Debug($"Trying to disable {disabledConditions.Count} conditions");
+                // Mod.Logger.Debug($"The current conditions are: " + string.Join(" - ", conditionNamesLeft));
+                foreach ((string name, bool value) in disabledConditions) {
+                    if (!value) continue;
+                    
+                    Condition? conditionToRemove = ShopConditions.GetConditionFromString(name);
+                    if (conditionToRemove is null) {
+                        Mod.Logger.Warn("Couldn't find condition: " + name);
+                        continue;
+                    }
+                    
+                    if (!conditions.Contains(conditionToRemove) || !value) continue;
+                    Mod.Logger.Debug($"Found {name}");
+                    conditions.Remove(conditionToRemove);
                 }
             }
         }

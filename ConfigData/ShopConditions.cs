@@ -5,7 +5,7 @@ using Terraria;
 namespace DisableShopConditions.ConfigData; 
 
 public abstract class ShopConditions {
-    private static Dictionary<string, Condition?> ConditionStorage = new();
+    private static readonly Dictionary<string, Condition?> ConditionStorage = new();
     
     public Dictionary<string, bool> GetDisabledConditions() {
         FieldInfo[] fields = GetType().GetFields();
