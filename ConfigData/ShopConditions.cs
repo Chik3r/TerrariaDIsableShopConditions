@@ -20,15 +20,29 @@ public abstract class ShopConditions {
     }
     
     public Dictionary<string, bool> GetDisabledConditions() {
-        FieldInfo[] fields = FieldsStorage;
         Dictionary<string, bool> disabledConditions = new();
-        foreach (FieldInfo field in fields) {
+        foreach (FieldInfo field in FieldsStorage) {
             if (field.GetValue(this) is bool value) {
                 disabledConditions.Add(field.Name, value);
             }
         }
 
         return disabledConditions;
+    }
+
+    public bool AllConditionsDisabled() {
+        foreach (FieldInfo fieldInfo in FieldsStorage) {
+            if (fieldInfo.GetValue(this) is not true)
+                return false;
+        }
+
+        return true;
+    }
+    
+    public void SetAllConditions(bool value) {
+        foreach (FieldInfo fieldInfo in FieldsStorage) {
+            fieldInfo.SetValue(this, value);
+        }
     }
 
     public static Condition? GetConditionFromString(string name) {

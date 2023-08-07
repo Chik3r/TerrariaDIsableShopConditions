@@ -1,5 +1,8 @@
 Configs: {
-	Common.BoolTooltip: If true, the condition will be disabled. If false, no changes will be made.
+	Common: {
+		BoolTooltip: If true, the condition will be disabled. If false, no changes will be made.
+		SetAllTooltip: Changing this value will change the value for all the conditions in the group below.
+	}
 
 	ShopConfig: {
 		DisplayName: Shop conditions Configs
