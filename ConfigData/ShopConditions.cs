@@ -1,14 +1,27 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using Terraria;
+using Terraria.ModLoader;
 
 namespace DisableShopConditions.ConfigData; 
 
 public abstract class ShopConditions {
     private static readonly Dictionary<string, Condition?> ConditionStorage = new();
+    private static readonly Dictionary<Type, FieldInfo[]> _typeFieldsStorage = new();
+    private static Mod Mod => ModContent.GetInstance<DisableShopConditions>();
+
+    private FieldInfo[] TypeFieldsStorage {
+        get {
+            Type type = GetType();
+            if (_typeFieldsStorage.TryGetValue(type, out FieldInfo[] fields)) return fields;
+            _typeFieldsStorage[type] = type.GetFields();
+            return _typeFieldsStorage[type];
+        }
+    }
     
     public Dictionary<string, bool> GetDisabledConditions() {
-        FieldInfo[] fields = GetType().GetFields();
+        FieldInfo[] fields = TypeFieldsStorage;
         Dictionary<string, bool> disabledConditions = new();
         foreach (FieldInfo field in fields) {
             if (field.GetValue(this) is bool value) {
@@ -24,5 +37,28 @@ public abstract class ShopConditions {
         ConditionStorage[name] = typeof(Condition).GetField(name, BindingFlags.Static | BindingFlags.Public)?.GetValue(null) as Condition;
         
         return ConditionStorage[name];
+    }
+
+    public override int GetHashCode() {
+        FieldInfo[] fields = TypeFieldsStorage;
+        int hash = 17;
+        foreach (FieldInfo field in fields) {
+            hash = hash * 23 + field.GetValue(this)!.GetHashCode();
+        }
+
+        return hash;
+    }
+
+    public override bool Equals(object? obj) {
+        if (obj is null) return false;
+        if (obj.GetType() != GetType()) return false;
+        
+        // Use reflection to check that all fields are equal
+        FieldInfo[] fields = TypeFieldsStorage;
+        foreach (FieldInfo field in fields) {
+            if (field.GetValue(this)?.Equals(field.GetValue(obj)) != true) return false;
+        }
+        
+        return true;
     }
 }
