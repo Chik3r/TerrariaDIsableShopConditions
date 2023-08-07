@@ -8,20 +8,19 @@ namespace DisableShopConditions.ConfigData;
 
 public abstract class ShopConditions {
     private static readonly Dictionary<string, Condition?> ConditionStorage = new();
-    private static readonly Dictionary<Type, FieldInfo[]> _typeFieldsStorage = new();
-    private static Mod Mod => ModContent.GetInstance<DisableShopConditions>();
+    private static readonly Dictionary<Type, FieldInfo[]> TypeFieldsStorage = new();
 
-    private FieldInfo[] TypeFieldsStorage {
+    private FieldInfo[] FieldsStorage {
         get {
             Type type = GetType();
-            if (_typeFieldsStorage.TryGetValue(type, out FieldInfo[] fields)) return fields;
-            _typeFieldsStorage[type] = type.GetFields();
-            return _typeFieldsStorage[type];
+            if (TypeFieldsStorage.TryGetValue(type, out FieldInfo[]? fields)) return fields;
+            TypeFieldsStorage[type] = type.GetFields();
+            return TypeFieldsStorage[type];
         }
     }
     
     public Dictionary<string, bool> GetDisabledConditions() {
-        FieldInfo[] fields = TypeFieldsStorage;
+        FieldInfo[] fields = FieldsStorage;
         Dictionary<string, bool> disabledConditions = new();
         foreach (FieldInfo field in fields) {
             if (field.GetValue(this) is bool value) {
@@ -40,7 +39,7 @@ public abstract class ShopConditions {
     }
 
     public override int GetHashCode() {
-        FieldInfo[] fields = TypeFieldsStorage;
+        FieldInfo[] fields = FieldsStorage;
         int hash = 17;
         foreach (FieldInfo field in fields) {
             hash = hash * 23 + field.GetValue(this)!.GetHashCode();
@@ -54,7 +53,7 @@ public abstract class ShopConditions {
         if (obj.GetType() != GetType()) return false;
         
         // Use reflection to check that all fields are equal
-        FieldInfo[] fields = TypeFieldsStorage;
+        FieldInfo[] fields = FieldsStorage;
         foreach (FieldInfo field in fields) {
             if (field.GetValue(this)?.Equals(field.GetValue(obj)) != true) return false;
         }
