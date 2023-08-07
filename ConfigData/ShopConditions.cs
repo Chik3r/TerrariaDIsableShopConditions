@@ -5,6 +5,8 @@ using Terraria;
 namespace DisableShopConditions.ConfigData; 
 
 public abstract class ShopConditions {
+    private static Dictionary<string, Condition?> ConditionStorage = new();
+    
     public Dictionary<string, bool> GetDisabledConditions() {
         FieldInfo[] fields = GetType().GetFields();
         Dictionary<string, bool> disabledConditions = new();
@@ -17,6 +19,10 @@ public abstract class ShopConditions {
         return disabledConditions;
     }
 
-    public static Condition? GetConditionFromString(string name) => 
-        typeof(Condition).GetField(name, BindingFlags.Static | BindingFlags.Public)?.GetValue(null) as Condition;
+    public static Condition? GetConditionFromString(string name) {
+        if (ConditionStorage.TryGetValue(name, out Condition? condition)) return condition;
+        ConditionStorage[name] = typeof(Condition).GetField(name, BindingFlags.Static | BindingFlags.Public)?.GetValue(null) as Condition;
+        
+        return ConditionStorage[name];
+    }
 }
