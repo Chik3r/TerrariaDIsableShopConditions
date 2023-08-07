@@ -1,1 +1,8 @@
-Disable shop conditions! is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+This mod disables shop conditions such as needing to be in a biome, defeating certain bosses and more, allowing you to buy items without needing to fulfill these conditions.
+The current conditions disabled are:
+ - All biome conditions
+ - All boss conditions
+ - All event conditions
+ - All moon conditions
+ - World flags (hardmode, crimson, etc.)
+ - And other conditions   
