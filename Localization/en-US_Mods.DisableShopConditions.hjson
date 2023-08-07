@@ -1,7 +1,11 @@
 Configs: {
 	Common: {
 		BoolTooltip: If true, the condition will be disabled. If false, no changes will be made.
-		SetAllTooltip: Changing this value will change the value for all the conditions in the group below.
+		SetAllTooltip:
+			'''
+			Changing this value will change the value for all the conditions in the group below.
+			If any of the conditions below are false, this value will be false.
+			'''
 	}
 
 	ShopConfig: {
