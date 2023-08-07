@@ -33,8 +33,6 @@ public class ShopNPC : GlobalNPC {
 
             foreach (ShopConditions shopCondition in shopConditions) {
                 Dictionary<string, bool> disabledConditions = shopCondition.GetDisabledConditions();
-                Mod.Logger.Debug($"Trying to disable {disabledConditions.Count} conditions");
-                // Mod.Logger.Debug($"The current conditions are: " + string.Join(" - ", conditionNamesLeft));
                 foreach ((string name, bool value) in disabledConditions) {
                     if (!value) continue;
                     
@@ -45,7 +43,6 @@ public class ShopNPC : GlobalNPC {
                     }
                     
                     if (!conditions.Contains(conditionToRemove) || !value) continue;
-                    Mod.Logger.Debug($"Found {name}");
                     conditions.Remove(conditionToRemove);
                 }
             }
