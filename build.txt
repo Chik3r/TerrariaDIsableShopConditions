@@ -1,3 +1,4 @@
 displayName = Disable shop conditions!
 author = Chik3r
 version = 1.0.0
+homepage = https://github.com/Chik3r/TerrariaDIsableShopConditions
