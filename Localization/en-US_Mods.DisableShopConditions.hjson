@@ -1,0 +1,57 @@
+Configs: {
+    Common.BoolTooltip: If true, the condition will be disabled. If false, no changes will be made.
+
+	ShopConfig: {
+		DisplayName: Shop conditions Configs
+
+		DisableBiomeConditions: {
+			Tooltip: ""
+			Label: Disable biome conditions
+		}
+
+		Headers.BiomeConditions: Biome conditions
+
+		SpecificBiomeConditions: {
+			Tooltip: ""
+			Label: Specific biome conditions
+		}
+	}
+
+	BiomeConditions: {
+		InAether.Label: In Aether
+		InGraveyard.Label: In Graveyard
+		InLihzhardTemple.Label: In Lihzhard Temple
+		InGemCave.Label: In Gem Cave
+		InHive.Label: In Hive
+		InMarble.Label: In Marble
+		InGranite.Label: In Granite
+		InOldOneArmy.Label: In Old One Army
+		InSandstorm.Label: In Sandstorm
+		InRain.Label: In Rain
+		InBeach.Label: In Beach
+		InUnderworld.Label: In Underworld
+		InUnderworldHeight.Label: In Underworld Height
+		InRockLayerHeight.Label: In Rock Layer Height
+		InDirtLayerHeight.Label: In Dirt Layer Height
+		InOverworldHeight.Label: In Overworld Height
+		InSpace.Label: In Space
+		InSkyHeight.Label: In Sky Height
+		InUndergroundDesert.Label: In Underground Desert
+		InGlowshroom.Label: In Glowshroom
+		InDesert.Label: In Desert
+		InTowerStardust.Label: In Tower Stardust
+		InTowerNebula.Label: In Tower Nebula
+		InTowerVortex.Label: In Tower Vortex
+		InTowerSolar.Label: In Tower Solar
+		InPeaceCandle.Label: In Peace Candle
+		InWaterCandle.Label: In Water Candle
+		InCrimson.Label: In Crimson
+		InSnow.Label: In Snow
+		InJungle.Label: In Jungle
+		InMeteor.Label: In Meteor
+		InHallow.Label: In Hallow
+		InCorrupt.Label: In Corruption
+		InDungeon.Label: In Dungeon
+		Tooltip: ""
+	}
+}
