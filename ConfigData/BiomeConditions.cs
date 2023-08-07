@@ -40,4 +40,11 @@ public class BiomeConditions : ShopConditions {
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool InLihzhardTemple;
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool InGraveyard;
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool InAether;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool InShoppingZoneForest;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool InBelowSurface;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool InEvilBiome;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotInEvilBiome;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotInHallow;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotInGraveyard;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotInUnderworld;
 }
