@@ -23,6 +23,7 @@ Configs: {
 			EventConditions: Event Conditions
 			MiscellaneousConditions: Miscellaneous Conditions
 			MoonConditions: Moon Conditions
+			BossesDownedConditions: Bosses Downed Conditions
 		}
 
 		SpecificBiomeConditions: {
@@ -62,6 +63,13 @@ Configs: {
 
 		SpecificMoonConditions: {
 			Label: Specific Moon Conditions
+			Tooltip: ""
+		}
+
+		DisableBossesDownedConditions.Label: Disable Bosses Downed Conditions
+
+		SpecificBossesDownedConditions: {
+			Label: Specific Bosses Downed Conditions
 			Tooltip: ""
 		}
 	}
@@ -192,5 +200,48 @@ Configs: {
 		MoonPhases15.Label: Moon Phases15
 		MoonPhases26.Label: Moon Phases26
 		MoonPhases37.Label: Moon Phases37
+	}
+
+	BossesDownedConditions: {
+		Tooltip: ""
+		DownedKingSlime.Label: Downed King Slime
+		DownedEyeOfCthulhu.Label: Downed Eye Of Cthulhu
+		DownedEowOrBoc.Label: Downed Eow Or Boc
+		DownedEaterOfWorlds.Label: Downed Eater Of Worlds
+		DownedBrainOfCthulhu.Label: Downed Brain Of Cthulhu
+		DownedQueenBee.Label: Downed Queen Bee
+		DownedSkeletron.Label: Downed Skeletron
+		DownedDeerclops.Label: Downed Deerclops
+		DownedQueenSlime.Label: Downed Queen Slime
+		DownedEarlygameBoss.Label: Downed Earlygame Boss
+		DownedMechBossAny.Label: Downed Mech Boss Any
+		DownedTwins.Label: Downed Twins
+		DownedDestroyer.Label: Downed Destroyer
+		DownedSkeletronPrime.Label: Downed Skeletron Prime
+		DownedMechBossAll.Label: Downed Mech Boss All
+		DownedPlantera.Label: Downed Plantera
+		DownedEmpressOfLight.Label: Downed Empress Of Light
+		DownedDukeFishron.Label: Downed Duke Fishron
+		DownedGolem.Label: Downed Golem
+		DownedMourningWood.Label: Downed Mourning Wood
+		DownedPumpking.Label: Downed Pumpking
+		DownedEverscream.Label: Downed Everscream
+		DownedSantaNK1.Label: Downed Santa N K1
+		DownedIceQueen.Label: Downed Ice Queen
+		DownedCultist.Label: Downed Cultist
+		DownedMoonLord.Label: Downed Moon Lord
+		DownedClown.Label: Downed Clown
+		DownedGoblinArmy.Label: Downed Goblin Army
+		DownedPirates.Label: Downed Pirates
+		DownedMartians.Label: Downed Martians
+		DownedFrostLegion.Label: Downed Frost Legion
+		DownedSolarPillar.Label: Downed Solar Pillar
+		DownedVortexPillar.Label: Downed Vortex Pillar
+		DownedNebulaPillar.Label: Downed Nebula Pillar
+		DownedStardustPillar.Label: Downed Stardust Pillar
+		DownedOldOnesArmyAny.Label: Downed Old Ones Army Any
+		DownedOldOnesArmyT1.Label: Downed Old Ones Army T1
+		DownedOldOnesArmyT2.Label: Downed Old Ones Army T2
+		DownedOldOnesArmyT3.Label: Downed Old Ones Army T3
 	}
 }

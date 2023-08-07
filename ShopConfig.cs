@@ -75,6 +75,22 @@ public class ShopConfig : ModConfig {
     
     //////////////////////////////////////////////////////////////////////////////
     
+    [Header("BossesDownedConditions")]
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.SetAllTooltip")]
+    [ReloadRequired]
+    [JsonIgnore]
+    [ShowDespiteJsonIgnore]
+    public bool DisableBossesDownedConditions {
+        get => SpecificBossesDownedConditions?.AllConditionsDisabled() ?? false;
+        set => SpecificBossesDownedConditions.SetAllConditions(value);
+    }
+
+    [ReloadRequired]
+    [Expand(false)]
+    public BossesDownedConditions SpecificBossesDownedConditions { get; set; } = new();
+    
+    //////////////////////////////////////////////////////////////////////////////
+    
     [Header("MiscellaneousConditions")]
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.SetAllTooltip")]
     [ReloadRequired]
