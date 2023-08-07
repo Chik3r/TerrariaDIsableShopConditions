@@ -40,6 +40,13 @@ Configs: {
 			Label: Specific World Type Conditions
 			Tooltip: ""
 		}
+
+		DisableEventConditions.Label: Disable Event Conditions
+
+		SpecificEventConditions: {
+			Label: Specific Event Conditions
+			Tooltip: ""
+		}
 	}
 
 	BiomeConditions: {
@@ -114,5 +121,17 @@ Configs: {
 		NotDontStarveWorld.Label: Not Dont Starve World
 		NotNoTrapsWorld.Label: Not No Traps World
 		NotZenithWorld.Label: Not Zenith World
+	}
+
+	EventConditions: {
+		Tooltip: ""
+		Christmas.Label: Christmas
+		Halloween.Label: Halloween
+		BloodMoon.Label: Blood Moon
+		NotBloodMoon.Label: Not Blood Moon
+		Eclipse.Label: Eclipse
+		NotEclipse.Label: Not Eclipse
+		EclipseOrBloodMoon.Label: Eclipse Or Blood Moon
+		NotEclipseAndNotBloodMoon.Label: Not Eclipse And Not Blood Moon
 	}
 }
