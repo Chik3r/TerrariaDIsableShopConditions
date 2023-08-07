@@ -106,5 +106,13 @@ Configs: {
 		DontStarveWorld.Label: Dont Starve World
 		NoTrapsWorld.Label: No Traps World
 		ZenithWorld.Label: Zenith World
+		NotDrunkWorld.Label: Not Drunk World
+		NotRemixWorld.Label: Not Remix World
+		NotNotTheBeesWorld.Label: Not Not The Bees World
+		NotForTheWorthy.Label: Not For The Worthy
+		NotTenthAnniversaryWorld.Label: Not Tenth Anniversary World
+		NotDontStarveWorld.Label: Not Dont Starve World
+		NotNoTrapsWorld.Label: Not No Traps World
+		NotZenithWorld.Label: Not Zenith World
 	}
 }

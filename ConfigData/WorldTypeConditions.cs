@@ -13,4 +13,12 @@ public class WorldTypeConditions : ShopConditions {
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool DontStarveWorld;
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NoTrapsWorld;
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool ZenithWorld;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotDrunkWorld;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotRemixWorld;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotNotTheBeesWorld;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotForTheWorthy;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotTenthAnniversaryWorld;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotDontStarveWorld;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotNoTrapsWorld;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotZenithWorld;
 }
