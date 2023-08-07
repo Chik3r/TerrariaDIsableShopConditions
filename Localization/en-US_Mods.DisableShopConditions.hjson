@@ -22,6 +22,7 @@ Configs: {
 			WorldTypeConditions: World Type Conditions
 			EventConditions: Event Conditions
 			MiscellaneousConditions: Miscellaneous Conditions
+			MoonConditions: Moon Conditions
 		}
 
 		SpecificBiomeConditions: {
@@ -54,6 +55,13 @@ Configs: {
 
 		SpecificMiscellaneousConditions: {
 			Label: Specific Miscellaneous Conditions
+			Tooltip: ""
+		}
+
+		DisableMoonConditions.Label: Disable Moon Conditions
+
+		SpecificMoonConditions: {
+			Label: Specific Moon Conditions
 			Tooltip: ""
 		}
 	}
@@ -157,5 +165,32 @@ Configs: {
 		HappyEnoughToSellPylons.Label: Happy Enough To Sell Pylons
 		AnotherTownNPCNearby.Label: Another Town N P C Nearby
 		IsNpcShimmered.Label: Is Npc Shimmered
+	}
+
+	MoonConditions: {
+		Tooltip: ""
+		MoonPhaseFull.Label: Moon Phase Full
+		MoonPhaseWaningGibbous.Label: Moon Phase Waning Gibbous
+		MoonPhaseThirdQuarter.Label: Moon Phase Third Quarter
+		MoonPhaseWaningCrescent.Label: Moon Phase Waning Crescent
+		MoonPhaseNew.Label: Moon Phase New
+		MoonPhaseWaxingCrescent.Label: Moon Phase Waxing Crescent
+		MoonPhaseFirstQuarter.Label: Moon Phase First Quarter
+		MoonPhaseWaxingGibbous.Label: Moon Phase Waxing Gibbous
+		MoonPhasesQuarter0.Label: Moon Phases Quarter0
+		MoonPhasesQuarter1.Label: Moon Phases Quarter1
+		MoonPhasesQuarter2.Label: Moon Phases Quarter2
+		MoonPhasesQuarter3.Label: Moon Phases Quarter3
+		MoonPhasesHalf0.Label: Moon Phases Half0
+		MoonPhasesHalf1.Label: Moon Phases Half1
+		MoonPhasesEven.Label: Moon Phases Even
+		MoonPhasesOdd.Label: Moon Phases Odd
+		MoonPhasesNearNew.Label: Moon Phases Near New
+		MoonPhasesEvenQuarters.Label: Moon Phases Even Quarters
+		MoonPhasesOddQuarters.Label: Moon Phases Odd Quarters
+		MoonPhases04.Label: Moon Phases04
+		MoonPhases15.Label: Moon Phases15
+		MoonPhases26.Label: Moon Phases26
+		MoonPhases37.Label: Moon Phases37
 	}
 }

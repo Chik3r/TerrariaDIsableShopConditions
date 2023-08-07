@@ -88,6 +88,22 @@ public class ShopConfig : ModConfig {
     [ReloadRequired]
     [Expand(false)]
     public MiscConditions SpecificMiscellaneousConditions { get; set; } = new();
+    
+    //////////////////////////////////////////////////////////////////////////////
+    
+    [Header("MoonConditions")]
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.SetAllTooltip")]
+    [ReloadRequired]
+    [JsonIgnore]
+    [ShowDespiteJsonIgnore]
+    public bool DisableMoonConditions {
+        get => SpecificMoonConditions?.AllConditionsDisabled() ?? false;
+        set => SpecificMoonConditions.SetAllConditions(value);
+    }
+
+    [ReloadRequired]
+    [Expand(false)]
+    public MoonConditions SpecificMoonConditions { get; set; } = new();
 
     public ShopConditions? ShopConditionFromType(Type type) => 
         GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
