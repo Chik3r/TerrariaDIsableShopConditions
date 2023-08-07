@@ -133,5 +133,9 @@ Configs: {
 		NotEclipse.Label: Not Eclipse
 		EclipseOrBloodMoon.Label: Eclipse Or Blood Moon
 		NotEclipseAndNotBloodMoon.Label: Not Eclipse And Not Blood Moon
+		Thunderstorm.Label: Thunderstorm
+		BirthdayParty.Label: Birthday Party
+		LanternNight.Label: Lantern Night
+		HappyWindyDay.Label: Happy Windy Day
 	}
 }

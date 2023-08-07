@@ -12,4 +12,8 @@ public class EventConditions : ShopConditions {
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotEclipse;
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool EclipseOrBloodMoon;
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool NotEclipseAndNotBloodMoon;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool Thunderstorm;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool BirthdayParty;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool LanternNight;
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.BoolTooltip")] public bool HappyWindyDay;
 }
