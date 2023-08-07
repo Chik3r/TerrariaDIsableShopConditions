@@ -18,6 +18,10 @@ public abstract class ShopConditions {
             return TypeFieldsStorage[type];
         }
     }
+
+    public ShopConditions(bool value = true) {
+        SetAllConditions(value);
+    }
     
     public Dictionary<string, bool> GetDisabledConditions() {
         Dictionary<string, bool> disabledConditions = new();

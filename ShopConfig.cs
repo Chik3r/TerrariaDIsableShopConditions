@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using DisableShopConditions.ConfigData;
@@ -16,13 +17,13 @@ public class ShopConfig : ModConfig {
     [JsonIgnore]
     [ShowDespiteJsonIgnore]
     public bool DisableBiomeConditions {
-        get => SpecificBiomeConditions.AllConditionsDisabled();
+        get => SpecificBiomeConditions?.AllConditionsDisabled() ?? false;
         set => SpecificBiomeConditions.SetAllConditions(value);
     }
 
     [ReloadRequired]
     [Expand(false)]
-    public BiomeConditions SpecificBiomeConditions { get; set; } =  new();
+    public BiomeConditions SpecificBiomeConditions { get; set; } = new();
 
     public ShopConditions? ShopConditionFromType(Type type) => 
         GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
