@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Linq;
 using DisableShopConditions.ConfigData;
 using Terraria.ModLoader.Config;
 
@@ -15,4 +17,7 @@ public class ShopConfig : ModConfig {
     [ReloadRequired]
     [Expand(false)]
     public BiomeConditions SpecificBiomeConditions = new();
+
+    public ShopConditions? ShopConditionFromType(Type type) => 
+        GetType().GetFields().FirstOrDefault(x => x.GetType() == type)?.GetValue(this) as ShopConditions;
 }

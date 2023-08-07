@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using Terraria;
 
 namespace DisableShopConditions.ConfigData; 
 
@@ -15,4 +16,7 @@ public abstract class ShopConditions {
 
         return disabledConditions;
     }
+
+    public static Condition? GetConditionFromString(string name) => 
+        typeof(Condition).GetField(name, BindingFlags.Static | BindingFlags.Public)?.GetValue(null) as Condition;
 }
