@@ -25,6 +25,8 @@ public class ShopConfig : ModConfig {
     [Expand(false)]
     public BiomeConditions SpecificBiomeConditions { get; set; } = new();
     
+    //////////////////////////////////////////////////////////////////////////////
+    
     [Header("WorldFlagConditions")]
     [TooltipKey("$Mods.DisableShopConditions.Configs.Common.SetAllTooltip")]
     [ReloadRequired]
@@ -38,6 +40,22 @@ public class ShopConfig : ModConfig {
     [ReloadRequired]
     [Expand(false)]
     public WorldFlagConditions SpecificWorldFlagConditions { get; set; } = new();
+    
+    //////////////////////////////////////////////////////////////////////////////
+    
+    [Header("WorldTypeConditions")]
+    [TooltipKey("$Mods.DisableShopConditions.Configs.Common.SetAllTooltip")]
+    [ReloadRequired]
+    [JsonIgnore]
+    [ShowDespiteJsonIgnore]
+    public bool DisableWorldTypeConditions {
+        get => SpecificWorldTypeConditions?.AllConditionsDisabled() ?? false;
+        set => SpecificWorldTypeConditions.SetAllConditions(value);
+    }
+
+    [ReloadRequired]
+    [Expand(false)]
+    public WorldTypeConditions SpecificWorldTypeConditions { get; set; } = new();
 
     public ShopConditions? ShopConditionFromType(Type type) => 
         GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)

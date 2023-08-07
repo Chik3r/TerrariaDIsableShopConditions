@@ -13,23 +13,31 @@ Configs: {
 
 		DisableBiomeConditions: {
 			Tooltip: ""
-			Label: Disable biome conditions
+			Label: Disable Biome Conditions
 		}
 
 		Headers: {
 			BiomeConditions: Biome conditions
-			WorldFlagConditions: World Flag Conditions Header
+			WorldFlagConditions: World Flag Conditions
+			WorldTypeConditions: World Type Conditions
 		}
 
 		SpecificBiomeConditions: {
 			Tooltip: ""
-			Label: Specific biome conditions
+			Label: Specific Biome Conditions
 		}
 
 		DisableWorldFlagConditions.Label: Disable World Flag Conditions
 
 		SpecificWorldFlagConditions: {
 			Label: Specific World Flag Conditions
+			Tooltip: ""
+		}
+
+		DisableWorldTypeConditions.Label: Disable World Type Conditions
+
+		SpecificWorldTypeConditions: {
+			Label: Specific World Type Conditions
 			Tooltip: ""
 		}
 	}
@@ -86,5 +94,17 @@ Configs: {
 		SmashedShadowOrb.Label: Smashed Shadow Orb
 		CrimsonWorld.Label: Crimson World
 		CorruptWorld.Label: Corrupt World
+	}
+
+	WorldTypeConditions: {
+		Tooltip: ""
+		DrunkWorld.Label: Drunk World
+		RemixWorld.Label: Remix World
+		NotTheBeesWorld.Label: Not The Bees World
+		ForTheWorthyWorld.Label: For The Worthy World
+		TenthAnniversaryWorld.Label: Tenth Anniversary World
+		DontStarveWorld.Label: Dont Starve World
+		NoTrapsWorld.Label: No Traps World
+		ZenithWorld.Label: Zenith World
 	}
 }
